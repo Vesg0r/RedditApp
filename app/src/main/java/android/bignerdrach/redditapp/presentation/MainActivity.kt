@@ -1,7 +1,8 @@
-package android.bignerdrach.redditapp
+package android.bignerdrach.redditapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
+import android.bignerdrach.redditapp.R
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
