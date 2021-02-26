@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class Information(
     val author: String,
     @SerializedName("created_utc")
-    val createdUtc: Double,
+    val createdUtc: Long,
     val id: String,
     @SerializedName("num_comments")
     val numComments: Int,

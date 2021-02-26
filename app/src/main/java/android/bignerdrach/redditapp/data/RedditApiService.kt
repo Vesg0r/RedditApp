@@ -18,7 +18,7 @@ interface RedditApiService {
             val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .build();
+                .build()
             return retrofit.create(RedditApiService::class.java)
         }
     }
