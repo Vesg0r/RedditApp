@@ -25,7 +25,7 @@ class TopListAdapter(private val topList: TopList) :
         val time: TextView = itemView.text_time
         val title: TextView = itemView.text_title
         val comments: TextView = itemView.text_comments
-
+        val commentsImage: ImageView = itemView.image_comments
         fun bind(listItem: Information) {
             image.setOnClickListener {
                 val intent = Intent(itemView.context, ImageActivity::class.java)
@@ -46,9 +46,10 @@ class TopListAdapter(private val topList: TopList) :
     override fun onBindViewHolder(holder: ListHolder, position: Int) {
         val listItem = topList.data.posts[position]
         holder.bind(listItem.data)
-
         Glide.with(holder.image.context).load(topList.data.posts[position].data.thumbnail)
             .into(holder.image)
+
+        holder.commentsImage.setImageResource(R.drawable.comment)
         holder.author.text = topList.data.posts[position].data.author
         holder.title.text = topList.data.posts[position].data.title
         val commentsText = "${topList.data.posts[position].data.numComments} comments"
