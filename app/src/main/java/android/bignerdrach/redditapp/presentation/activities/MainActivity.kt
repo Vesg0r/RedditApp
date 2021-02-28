@@ -15,7 +15,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     lateinit var mService: RedditApiService
-    lateinit var layoutManager: LinearLayoutManager
+    private lateinit var layoutManager: LinearLayoutManager
     lateinit var adapter: TopListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
