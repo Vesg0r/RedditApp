@@ -1,4 +1,4 @@
-package android.bignerdrach.redditapp.presentation
+package android.bignerdrach.redditapp.presentation.activities
 
 import android.bignerdrach.redditapp.R
 import android.bignerdrach.redditapp.data.RedditApiService
@@ -21,19 +21,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        mService = RedditApiService()
-        recyclerTopList.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
         recyclerTopList.layoutManager = layoutManager
-
+        mService = RedditApiService()
         getAllPostsList()
     }
 
     private fun getAllPostsList() {
         mService.getTopList().enqueue(object : Callback<TopList> {
             override fun onFailure(call: Call<TopList>, t: Throwable) {
-                Toast.makeText(baseContext, "Exception Exception Exception", Toast.LENGTH_SHORT)
+                Toast.makeText(baseContext, "Exception", Toast.LENGTH_SHORT)
                     .show()
             }
 
